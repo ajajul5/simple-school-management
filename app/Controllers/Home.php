@@ -72,7 +72,7 @@ class Home extends BaseController
            $search   = $this->request->getVar('search');
            $paginate = $schools->select('*')->orLike('name', $search)->orLike('location', $search)->paginate(10);
         } else {
-            $paginate = $schools->paginate(10);
+            $paginate = $schools->paginate(20);
         }
         
         $data = [
